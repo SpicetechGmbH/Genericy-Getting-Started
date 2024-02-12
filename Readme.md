@@ -31,6 +31,18 @@ The `application.properties` file contains configuration settings for connecting
 
 - `genericy.config-db.driver-class-name`: Class name of the JDBC driver for the configuration database, supporting the same drivers as the target database.
 
+Sie haben bereits einen ausgezeichneten Rahmen für die README.md sowohl in Englisch als auch in Deutsch erstellt. Um die Konfigurationserweiterung für die OpenAPI-Dokumentation zu integrieren, füge ich den entsprechenden Abschnitt in beide Sprachversionen ein:
+
+---
+
+### Additional Configuration for OpenAPI Documentation
+
+To ensure the OpenAPI documentation functions correctly and is accessible from outside the container, you need to specify the external URL through which the container will be accessed. Add the following line to your `application.properties` file:
+
+- `genericy.allowed-origins=http://localhost:8888`
+
+This setting should match the URL you use to access the Genericy container from your browser. Adjust the URL accordingly if your setup differs.
+
 ### Steps to Get Started
 1. Clone this repository.
 2. Configure the `application.properties` file with your database details.
@@ -70,9 +82,15 @@ Die Datei `application.properties` enthält Konfigurationseinstellungen für die
 
 - `genericy.config-db.driver-class-name`: Klassenname des JDBC-Treibers für die Konfigurationsdatenbank, unterstützt die gleichen Treiber wie die Ziel-Datenbank.
 
-### Schritte zum E
+### Zusätzliche Konfiguration für OpenAPI-Dokumentation
 
-instieg
+Um sicherzustellen, dass die OpenAPI-Dokumentation korrekt funktioniert und von außerhalb des Containers zugänglich ist, müssen Sie die externe URL angeben, über die auf den Container zugegriffen wird. Fügen Sie folgende Zeile zu Ihrer `application.properties`-Datei hinzu:
+
+- `genericy.allowed-origins=http://localhost:8888`
+
+Diese Einstellung sollte der URL entsprechen, die Sie verwenden, um auf den Genericy-Container von Ihrem Browser aus zuzugreifen. Passen Sie die URL entsprechend an, falls Ihre Einrichtung abweicht.
+
+### Schritte zum Einstieg
 1. Dieses Repository klonen.
 2. Konfigurieren Sie die `application.properties` Datei mit Ihren Datenbankdetails.
 3. Beziehen Sie die Datei `licence.lic` von [https://www.genericy.de](https://www.genericy.de) und legen Sie sie in denselben Ordner wie die Datei `genericy.jar`.
