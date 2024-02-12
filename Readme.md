@@ -41,6 +41,19 @@ To ensure the OpenAPI documentation functions correctly and is accessible from o
 
 This setting should match the URL you use to access the Genericy container from your browser. Adjust the URL accordingly if your setup differs.
 
+### Important Note for SQLite Users
+
+If you are using SQLite as your database with Genericy, it is crucial to stop the Genericy service before making any changes to the SQLite database. SQLite locks the database file during write operations, which means that no changes can be made to the database while Genericy is running. To ensure data integrity and prevent potential data loss or corruption, please follow these steps:
+
+- If you started the Genericy service with the `-d` option (detached mode), stop the service by running `docker-compose down` in the terminal where your Genericy Docker container is running.
+- If you started the service without the `-d` option, simply press `Ctrl-C` in the terminal to stop the service.
+
+After stopping the service:
+1. Make the necessary changes to your SQLite database.
+2. Restart the Genericy service by running `docker-compose up` (add `-d` if you wish to run it in detached mode again).
+
+This procedure ensures that your database changes are safely applied, and Genericy can continue to operate smoothly with the updated database.
+
 ### Steps to Get Started
 1. Clone this repository.
 2. Configure the `application.properties` file with your database details.
@@ -89,6 +102,19 @@ Um sicherzustellen, dass die OpenAPI-Dokumentation korrekt funktioniert und von 
 - `genericy.allowed-origins=http://localhost:8888`
 
 Diese Einstellung sollte der URL entsprechen, die Sie verwenden, um auf den Genericy-Container von Ihrem Browser aus zuzugreifen. Passen Sie die URL entsprechend an, falls Ihre Einrichtung abweicht.
+
+### Wichtiger Hinweis für SQLite-Benutzer
+
+Wenn Sie SQLite als Datenbank zusammen mit Genericy verwenden, ist es entscheidend, den Genericy-Dienst zu stoppen, bevor Änderungen an der SQLite-Datenbank vorgenommen werden. SQLite sperrt die Datenbankdatei während Schreiboperationen, was bedeutet, dass keine Änderungen an der Datenbank vorgenommen werden können, solange Genericy läuft. Um die Datenintegrität zu gewährleisten und möglichen Datenverlust oder -korruption zu verhindern, folgen Sie bitte diesen Schritten:
+
+- Wenn Sie den Genericy-Dienst mit der Option `-d` (Detached-Modus) gestartet haben, stoppen Sie den Dienst, indem Sie `docker-compose down` im Terminal ausführen, in dem Ihr Genericy Docker-Container läuft.
+- Wenn Sie den Dienst ohne die `-d` Option gestartet haben, drücken Sie einfach `Ctrl-C` im Terminal, um den Dienst zu stoppen.
+
+Nachdem der Dienst gestoppt wurde:
+1. Nehmen Sie die notwendigen Änderungen an Ihrer SQLite-Datenbank vor.
+2. Starten Sie den Genericy-Dienst neu, indem Sie `docker-compose up` ausführen (fügen Sie `-d` hinzu, wenn Sie ihn erneut im Detached-Modus ausführen möchten).
+
+Durch das Befolgen dieses Verfahrens stellen Sie sicher, dass Ihre Datenbankänderungen sicher angewendet werden und dass Genericy reibungslos mit der aktualisierten Datenbank weiterarbeiten kann.
 
 ### Schritte zum Einstieg
 1. Dieses Repository klonen.
