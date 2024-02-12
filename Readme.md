@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://www.genericy.de" target="_blank"><img src="https://www.genericy.de/wp-content/uploads/2024/01/Genericy-Logo.png" width="200" alt="Genericy"></a>
+</p>
+
 # Genericy: Getting Started
 
 ## English (German version below)
