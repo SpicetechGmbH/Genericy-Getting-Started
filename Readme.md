@@ -1,7 +1,3 @@
-### README.md
-
----
-
 # Genericy: Getting Started
 
 ## English (German version below)
