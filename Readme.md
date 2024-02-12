@@ -33,8 +33,6 @@ The `application.properties` file contains configuration settings for connecting
 
 Sie haben bereits einen ausgezeichneten Rahmen für die README.md sowohl in Englisch als auch in Deutsch erstellt. Um die Konfigurationserweiterung für die OpenAPI-Dokumentation zu integrieren, füge ich den entsprechenden Abschnitt in beide Sprachversionen ein:
 
----
-
 ### Additional Configuration for OpenAPI Documentation
 
 To ensure the OpenAPI documentation functions correctly and is accessible from outside the container, you need to specify the external URL through which the container will be accessed. Add the following line to your `application.properties` file:
@@ -50,6 +48,8 @@ This setting should match the URL you use to access the Genericy container from 
 4. Optionally, adjust the ports in the `docker-compose` file.
 5. Run `docker-compose up`.
 6. Open `http://localhost:8888` in your browser.
+
+---
 
 ## Deutsch
 
