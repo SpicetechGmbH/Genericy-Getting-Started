@@ -27,16 +27,6 @@ The `application.properties` file contains configuration settings for connecting
   - PostgreSQL: `org.postgresql.Driver`
   - SQLite: `org.sqlite.JDBC`
 
-- `genericy.config-db.jdbc-url`: JDBC URL for Genericy's own configuration database, which can be the same as or separate from the target database.
-
-- `genericy.config-db.username`: Username for accessing the configuration database.
-
-- `genericy.config-db.password`: Password for accessing the configuration database.
-
-- `genericy.config-db.driver-class-name`: Class name of the JDBC driver for the configuration database, supporting the same drivers as the target database.
-
-Sie haben bereits einen ausgezeichneten Rahmen für die README.md sowohl in Englisch als auch in Deutsch erstellt. Um die Konfigurationserweiterung für die OpenAPI-Dokumentation zu integrieren, füge ich den entsprechenden Abschnitt in beide Sprachversionen ein:
-
 ### Additional Configuration for OpenAPI Documentation
 
 To ensure the OpenAPI documentation functions correctly and is accessible from outside the container, you need to specify the external URL through which the container will be accessed. Add the following line to your `application.properties` file:
@@ -59,8 +49,18 @@ After stopping the service:
 This procedure ensures that your database changes are safely applied, and Genericy can continue to operate smoothly with the updated database.
 
 ### Steps to Get Started
-1. Clone this repository.
-2. Configure the `application.properties` file with your database details.
+1. Clone this repository and cd into the directory
+```
+git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+```
+```
+cd Genericy-Getting-Started
+```
+2a. Download a sample database (this step ist optional and can be replaced by step 2b)
+```
+curl https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
+```
+2b. Configure the `application.properties` file with your database details.
 3. Obtain the `licence.lic` file from [https://www.genericy.de](https://www.genericy.de) and place it in the same folder as the `genericy.jar` file.
 4. Optionally, adjust the ports in the `docker-compose` file.
 5. Run `docker-compose up`.
@@ -91,14 +91,6 @@ Die Datei `application.properties` enthält Konfigurationseinstellungen für die
   - PostgreSQL: `org.postgresql.Driver`
   - SQLite: `org.sqlite.JDBC`
 
-- `genericy.config-db.jdbc-url`: JDBC-URL für die Konfigurationsdatenbank von Genericy, die gleich oder getrennt von der Ziel-Datenbank sein kann.
-
-- `genericy.config-db.username`: Benutzername für den Zugriff auf die Konfigurationsdatenbank.
-
-- `genericy.config-db.password`: Passwort für den Zugriff auf die Konfigurationsdatenbank.
-
-- `genericy.config-db.driver-class-name`: Klassenname des JDBC-Treibers für die Konfigurationsdatenbank, unterstützt die gleichen Treiber wie die Ziel-Datenbank.
-
 ### Zusätzliche Konfiguration für OpenAPI-Dokumentation
 
 Um sicherzustellen, dass die OpenAPI-Dokumentation korrekt funktioniert und von außerhalb des Containers zugänglich ist, müssen Sie die externe URL angeben, über die auf den Container zugegriffen wird. Fügen Sie folgende Zeile zu Ihrer `application.properties`-Datei hinzu:
@@ -121,8 +113,18 @@ Nachdem der Dienst gestoppt wurde:
 Durch das Befolgen dieses Verfahrens stellen Sie sicher, dass Ihre Datenbankänderungen sicher angewendet werden und dass Genericy reibungslos mit der aktualisierten Datenbank weiterarbeiten kann.
 
 ### Schritte zum Einstieg
-1. Dieses Repository klonen.
-2. Konfigurieren Sie die `application.properties` Datei mit Ihren Datenbankdetails.
+1. Dieses Repository klonen und in das Verezeichnis wechseln.
+```
+git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+```
+```
+cd Genericy-Getting-Started
+```
+2a. Eine Beispiel-Datenbank laden (dieser Schritt ist optional und kann durch 2b ersetzt werden)
+```
+curl https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
+```
+2b. Konfigurieren Sie die `application.properties` Datei mit Ihren Datenbankdetails.
 3. Beziehen Sie die Datei `licence.lic` von [https://www.genericy.de](https://www.genericy.de) und legen Sie sie in denselben Ordner wie die Datei `genericy.jar`.
 4. Optional können Sie die Ports in der Datei `docker-compose` anpassen.
 5. Führen Sie `docker-compose up` aus.
