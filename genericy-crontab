@@ -1,0 +1,2 @@
+*/1 * * * * root /genericy/upgrade.sh >> /var/log/cron.log 2>&1
+* * * * * root echo "Hello World" >> /var/log/cron.log 2>&1

@@ -2,13 +2,17 @@ version: '3.2'
 
 services:
   genericy:
-    image: eclipse-temurin:17-jre-jammy
-    container_name: genericy-container
+    build: .
+    image: genericy:latest
+    container_name: genericy
+    volumes:
+      - genericy-data:/genericy
     ports:
       - "8888:8080"
     environment:
       - JAVA_OPTION=-Xmx1024m
-    volumes:
-      - ./:/genericy
     working_dir: /genericy
-    command: java -jar genericy.jar
+    restart: unless-stopped
+
+volumes:
+  genericy-data:
