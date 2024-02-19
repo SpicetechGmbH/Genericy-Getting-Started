@@ -12,6 +12,24 @@ Welcome to Genericy, the new era of database integration. Revolutionize your dat
 - Docker and Docker Compose installed. [Install Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
 - A license file, which must be obtained from the Genericy website: [https://www.genericy.de](https://www.genericy.de)
 
+### Steps to Get Started
+1. Clone this repository and cd into the directory
+```
+git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+```
+```
+cd Genericy-Getting-Started
+```
+2a. Download a sample database (this step ist optional and can be replaced by step 2b)
+```
+curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
+```
+2b. Configure the `application.properties` file with your database details.
+3. Obtain the `licence.lic` file from [https://www.genericy.de](https://www.genericy.de) and place it in the same folder as the `genericy.jar` file.
+4. Optionally, adjust the ports in the `docker-compose` file.
+5. Run `docker-compose up`.
+6. Open `http://localhost:8888` in your browser.
+
 ### Configuration
 The `application.properties` file contains configuration settings for connecting your database to Genericy. Here's what each setting means:
 
@@ -48,24 +66,6 @@ After stopping the service:
 
 This procedure ensures that your database changes are safely applied, and Genericy can continue to operate smoothly with the updated database.
 
-### Steps to Get Started
-1. Clone this repository and cd into the directory
-```
-git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
-```
-```
-cd Genericy-Getting-Started
-```
-2a. Download a sample database (this step ist optional and can be replaced by step 2b)
-```
-curl https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
-```
-2b. Configure the `application.properties` file with your database details.
-3. Obtain the `licence.lic` file from [https://www.genericy.de](https://www.genericy.de) and place it in the same folder as the `genericy.jar` file.
-4. Optionally, adjust the ports in the `docker-compose` file.
-5. Run `docker-compose up`.
-6. Open `http://localhost:8888` in your browser.
-
 ---
 
 ## Deutsch
@@ -75,6 +75,24 @@ Willkommen bei Genericy, dem neuen Zeitalter der Datenbankintegration. Revolutio
 ### Voraussetzungen
 - Docker und Docker-Compose installiert. [Docker installieren](https://docs.docker.com/get-docker/) und [Docker-Compose installieren](https://docs.docker.com/compose/install/)
 - Eine Lizenzdatei, die von der Genericy-Website bezogen werden muss: [https://www.genericy.de](https://www.genericy.de)
+
+### Schritte zum Einstieg
+1. Dieses Repository klonen und in das Verezeichnis wechseln.
+```
+git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+```
+```
+cd Genericy-Getting-Started
+```
+2a. Eine Beispiel-Datenbank laden (dieser Schritt ist optional und kann durch 2b ersetzt werden)
+```
+curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
+```
+2b. Konfigurieren Sie die `application.properties` Datei mit Ihren Datenbankdetails.
+3. Beziehen Sie die Datei `licence.lic` von [https://www.genericy.de](https://www.genericy.de) und legen Sie sie in denselben Ordner wie die Datei `genericy.jar`.
+4. Optional können Sie die Ports in der Datei `docker-compose` anpassen.
+5. Führen Sie `docker-compose up` aus.
+6. Öffnen Sie `http://localhost:8888` in Ihrem Browser.
 
 ### Konfiguration
 Die Datei `application.properties` enthält Konfigurationseinstellungen für die Verbindung Ihrer Datenbank mit Genericy. Hier die Bedeutung jeder Einstellung:
@@ -111,23 +129,5 @@ Nachdem der Dienst gestoppt wurde:
 2. Starten Sie den Genericy-Dienst neu, indem Sie `docker-compose up` ausführen (fügen Sie `-d` hinzu, wenn Sie ihn erneut im Detached-Modus ausführen möchten).
 
 Durch das Befolgen dieses Verfahrens stellen Sie sicher, dass Ihre Datenbankänderungen sicher angewendet werden und dass Genericy reibungslos mit der aktualisierten Datenbank weiterarbeiten kann.
-
-### Schritte zum Einstieg
-1. Dieses Repository klonen und in das Verezeichnis wechseln.
-```
-git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
-```
-```
-cd Genericy-Getting-Started
-```
-2a. Eine Beispiel-Datenbank laden (dieser Schritt ist optional und kann durch 2b ersetzt werden)
-```
-curl https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
-```
-2b. Konfigurieren Sie die `application.properties` Datei mit Ihren Datenbankdetails.
-3. Beziehen Sie die Datei `licence.lic` von [https://www.genericy.de](https://www.genericy.de) und legen Sie sie in denselben Ordner wie die Datei `genericy.jar`.
-4. Optional können Sie die Ports in der Datei `docker-compose` anpassen.
-5. Führen Sie `docker-compose up` aus.
-6. Öffnen Sie `http://localhost:8888` in Ihrem Browser.
 
 [Impress/Impressum](https://www.spicetech.de/#Impressum)
