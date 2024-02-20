@@ -120,6 +120,7 @@ curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/rel
    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 57 57" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/4536ec51-48d7-4098-98d0-c68fd4e3d9f1">
 
 8. Öffnen Sie `http://localhost:8888/genericy/admin.html` in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
+   
    <img width="1798" alt="Bildschirmfoto 2024-02-20 um 10 29 08" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/d6f1be74-54bc-4373-9116-45a10fbdb739">
 
 10. Optional: Sie können Beispiel-Endpoints im Menü unter SETTINGS hinzufügen.
