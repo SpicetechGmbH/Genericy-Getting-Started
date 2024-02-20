@@ -32,7 +32,7 @@ curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/rel
 6. Copy the admin key that is displayed in the Docker console.
    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 57 57" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/48535d34-3be6-4623-b170-0a565a635294">
 
-8. Open `http://localhost:8888/genericy/admin.html` in your browser, insert the admin key, and click LOGIN.
+8. Open [http://localhost:8888/genericy/admin.html](http://localhost:8888/genericy/admin.html) in your browser, insert the admin key, and click LOGIN.
    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 15" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/05a35d85-4af7-4972-92b4-573e27b31740">
 
 10. Optionally, you can add sample endpoints from the SETTINGS menu.
@@ -119,7 +119,7 @@ curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/rel
 6. Kopieren Sie den Admin-Key, der in der Docker-Konsole ausgegeben wird.
    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 57 57" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/4536ec51-48d7-4098-98d0-c68fd4e3d9f1">
 
-8. Öffnen Sie `http://localhost:8888/genericy/admin.html` in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
+8. Öffnen Sie [http://localhost:8888/genericy/admin.html](http://localhost:8888/genericy/admin.html) in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
    
    <img width="1798" alt="Bildschirmfoto 2024-02-20 um 10 29 08" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/d6f1be74-54bc-4373-9116-45a10fbdb739">
 
