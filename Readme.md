@@ -30,10 +30,26 @@ curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/rel
 5. Execute `docker-compose up`.
 
 6. Copy the admin key that is displayed in the Docker console.
+   <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 57 57" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/48535d34-3be6-4623-b170-0a565a635294">
 
-7. Open `http://localhost:8888/genericy/admin.html` in your browser, insert the admin key, and click LOGIN.
+8. Open `http://localhost:8888/genericy/admin.html` in your browser, insert the admin key, and click LOGIN.
+   <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 15" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/05a35d85-4af7-4972-92b4-573e27b31740">
 
-8. Optionally, you can add sample endpoints by executing LOAD SAMPLE STATEMENTS from the SETTINGS menu.
+10. Optionally, you can add sample endpoints from the SETTINGS menu.
+
+    - Click on SETTINGS
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 30" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/d3f9128f-7cbd-4b31-a9ed-b6d7c7a944b0">
+
+    - Click on LOAD SAMPLE STATEMENTS
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 43" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/ea20648b-7240-4ff2-9860-ce04a2238475">
+
+    - Click on CONFIRM
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 55" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/fd7b19d0-f32f-436d-8fb6-9512fe6fd2b2">
+
+    - Click on SQL-EDITOR to get back
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 42 14" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/2e33657f-428c-4bcc-bb91-101ecab5ac84">
+
+Now you can work the sample data and create your own Genericy statements.
 
 In the next step, the sample database can be replaced with an existing target database. The configuration must be adjusted as described in the following section.
 
@@ -101,10 +117,26 @@ curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/rel
 5. Führen Sie `docker-compose up` aus.
 
 6. Kopieren Sie den Admin-Key, der in der Docker-Konsole ausgegeben wird.
+   <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 57 57" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/4536ec51-48d7-4098-98d0-c68fd4e3d9f1">
 
-7. Öffnen Sie `http://localhost:8888/genericy/admin.html` in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
+8. Öffnen Sie `http://localhost:8888/genericy/admin.html` in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
+   <img width="1798" alt="Bildschirmfoto 2024-02-20 um 10 29 08" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/d6f1be74-54bc-4373-9116-45a10fbdb739">
 
-8. Optional: Sie können Beispiel-Endpoints hinzufügen, indem Sie im Menü unter SETTINGS den Punkt LOAD SAMPLE STATEMENTS ausführen.
+10. Optional: Sie können Beispiel-Endpoints im Menü unter SETTINGS hinzufügen.
+    
+    - KLicken Sie auf SETTINGS
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 30" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/d3f9128f-7cbd-4b31-a9ed-b6d7c7a944b0">
+
+    - Klicken Sie auf LOAD SAMPLE STATEMENTS
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 43" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/ea20648b-7240-4ff2-9860-ce04a2238475">
+
+    - Klicken Sie auf CONFIRM
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 55" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/fd7b19d0-f32f-436d-8fb6-9512fe6fd2b2">
+
+    - KLicken Sie auf SQL-EDITOR um zurückzukehren
+    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 42 14" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/2e33657f-428c-4bcc-bb91-101ecab5ac84">
+
+Nun können Sie mit den Beispieldaten arbeiten und Ihre eigenen Genericy-Statements erstellen.
 
 Im nächsten Schritt kann die Beispieldatenbank durch eine existierende Ziel-Datenbank ersetzt werden. Die Konfiguration muss wie im folgenden Abschnitt beschrieben angepasst werden.
 
