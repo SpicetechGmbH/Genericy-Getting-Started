@@ -12,23 +12,30 @@ Welcome to Genericy, the new era of database integration. Revolutionize your dat
 - Docker and Docker Compose installed. [Install Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
 - A license file, which must be obtained from the Genericy website: [https://www.genericy.de](https://www.genericy.de)
 
-### Steps to Get Started
-1. Clone this repository and cd into the directory
+### Steps to Get Started with a SQLite Sample Database
+1. Clone this repository and switch to the directory:
 ```
 git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
-```
-```
 cd Genericy-Getting-Started
 ```
-2a. Download a sample database (this step ist optional and can be replaced by step 2b)
+2. Download a sample database:
 ```
 curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
 ```
-2b. Configure the `application.properties` file with your database details.
-3. Obtain the `licence.lic` file from [https://www.genericy.de](https://www.genericy.de) and place it in the same folder as the `genericy.jar` file.
-4. Optionally, adjust the ports in the `docker-compose` file.
-5. Run `docker-compose up`.
-6. Open `http://localhost:8888` in your browser.
+
+3. The `license.lic` file will be delivered to you via email. Place it in the same folder as the `genericy.jar` file and pay close attention to the exact spelling of the filename `license.lic`.
+
+4. Optionally, you can adjust the port, to which the service is bound on the host machine, in the `docker-compose.yml` file. By default, the port is set to 8888.
+
+5. Execute `docker-compose up`.
+
+6. Copy the admin key that is displayed in the Docker console.
+
+7. Open `http://localhost:8888/genericy/admin.html` in your browser, insert the admin key, and click LOGIN.
+
+8. Optionally, you can add sample endpoints by executing LOAD SAMPLE STATEMENTS from the SETTINGS menu.
+
+In the next step, the sample database can be replaced with an existing target database. The configuration must be adjusted as described in the following section.
 
 ### Configuration
 The `application.properties` file contains configuration settings for connecting your database to Genericy. Here's what each setting means:
@@ -76,23 +83,30 @@ Willkommen bei Genericy, dem neuen Zeitalter der Datenbankintegration. Revolutio
 - Docker und Docker-Compose installiert. [Docker installieren](https://docs.docker.com/get-docker/) und [Docker-Compose installieren](https://docs.docker.com/compose/install/)
 - Eine Lizenzdatei, die von der Genericy-Website bezogen werden muss: [https://www.genericy.de](https://www.genericy.de)
 
-### Schritte zum Einstieg
-1. Dieses Repository klonen und in das Verezeichnis wechseln.
+### Schritte zum Einstieg mit einer SQLite-Beispieldatenbank
+1. Klonen Sie dieses Repository und wechseln Sie in das Verzeichnis:
 ```
 git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
-```
-```
 cd Genericy-Getting-Started
 ```
-2a. Eine Beispiel-Datenbank laden (dieser Schritt ist optional und kann durch 2b ersetzt werden)
+2. Laden Sie eine Beispiel-Datenbank herunter:
 ```
 curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
 ```
-2b. Konfigurieren Sie die `application.properties` Datei mit Ihren Datenbankdetails.
-3. Beziehen Sie die Datei `licence.lic` von [https://www.genericy.de](https://www.genericy.de) und legen Sie sie in denselben Ordner wie die Datei `genericy.jar`.
-4. Optional können Sie die Ports in der Datei `docker-compose` anpassen.
+
+3. Die Datei `license.lic` wird Ihnen per E-Mail zugestellt. Legen Sie sie in denselben Ordner wie die `genericy.jar`-Datei und achten Sie auf die exakte Schreibweise des Dateinamens `license.lic`.
+
+4. Optional: Sie können den Port, an den der Dienst auf dem Hostrechner gebunden wird, in der `docker-compose.yml`-Datei anpassen. Standardmäßig ist der Port auf 8888 eingestellt.
+
 5. Führen Sie `docker-compose up` aus.
-6. Öffnen Sie `http://localhost:8888` in Ihrem Browser.
+
+6. Kopieren Sie den Admin-Key, der in der Docker-Konsole ausgegeben wird.
+
+7. Öffnen Sie `http://localhost:8888/genericy/admin.html` in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
+
+8. Optional: Sie können Beispiel-Endpoints hinzufügen, indem Sie im Menü unter SETTINGS den Punkt LOAD SAMPLE STATEMENTS ausführen.
+
+Im nächsten Schritt kann die Beispieldatenbank durch eine existierende Ziel-Datenbank ersetzt werden. Die Konfiguration muss wie im folgenden Abschnitt beschrieben angepasst werden.
 
 ### Konfiguration
 Die Datei `application.properties` enthält Konfigurationseinstellungen für die Verbindung Ihrer Datenbank mit Genericy. Hier die Bedeutung jeder Einstellung:
