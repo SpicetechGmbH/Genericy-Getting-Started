@@ -20,7 +20,7 @@ cd Genericy-Getting-Started
 ```
 2. Download a sample database:
 ```
-curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
+curl -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
 ```
 
 3. The `license.lic` file will be delivered to you via email. Place it in the same folder as the `genericy.jar` file and pay close attention to the exact spelling of the filename `license.lic`.
@@ -107,7 +107,7 @@ cd Genericy-Getting-Started
 ```
 2. Laden Sie eine Beispiel-Datenbank herunter:
 ```
-curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
+curl -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
 ```
 
 3. Die Datei `license.lic` wird Ihnen per E-Mail zugestellt. Legen Sie sie in denselben Ordner wie die `genericy.jar`-Datei und achten Sie auf die exakte Schreibweise des Dateinamens `license.lic`.
