@@ -12,6 +12,7 @@ services:
       - ./:/genericy
     working_dir: /genericy
     command: java -jar genericy.jar
+
     # for Linux Systems uncomment the following two lines
     # extra_hosts:
     #   - "host.docker.internal:host-gateway"
