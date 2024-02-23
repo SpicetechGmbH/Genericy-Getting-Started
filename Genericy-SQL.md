@@ -1,6 +1,33 @@
-# Genericy-SQL (German version below)
+# Genericy-SQL ([German version below](#genericy-sql-deutsche-version))
 
 Genericy enables seamless transformation of SQL queries into REST APIs. A powerful feature of Genericy is the support of Named Parameters in SQL statements, which provide a flexible and secure method for data manipulation. With the introduction of type specifications for these Named Parameters, developers can now further enhance data integrity. This documentation guides through the extension of Named Parameters with optional types, increasing the robustness and security of the SQL-to-REST-API transformation.
+
+## Table of Contents
+
+1. [Introduction to Type Extensions](#introduction-to-type-extensions)
+   - [Utilization in Genericy-SQL](#utilization-in-genericy-sql)
+     - [Example](#example)
+2. [Schema and Combinatorics of Named Parameters in Genericy-SQL](#schema-and-combinatorics-of-named-parameters-in-genericy-sql)
+   - [Fundamental Principles](#fundamental-principles)
+   - [Type Definitions](#type-definitions)
+     - [Primitive Types](#primitive-types)
+     - [Nullable Types](#nullable-types)
+     - [Array Types](#array-types)
+     - [Complex Types](#complex-types)
+   - [Rules for Combining Types](#rules-for-combining-types)
+   - [Default Value](#default-value)
+3. [Implementation of Nullable in the REST API](#implementation-of-nullable-in-the-rest-api)
+   - [SELECT (GET)](#select-get)
+   - [INSERT (POST) and UPDATE (PUT)](#insert-post-and-update-put)
+   - [DELETE (DELETE)](#delete-delete)
+4. [Clear Distinction Between Short and Long Forms with Examples](#clear-distinction-between-short-and-long-forms-with-examples)
+5. [More Real-World Use Cases](#more-real-world-use-cases)
+   - [Use Case 1: User Management](#use-case-1-user-management)
+   - [Use Case 2: Product Search with Filters](#use-case-2-product-search-with-filters)
+   - [Use Case 3: Booking and Reservation Systems](#use-case-3-booking-and-reservation-systems)
+6. [Error Handling and Common Mistakes](#error-handling-and-common-mistakes)
+7. [FAQ Section](#faq-section)
+8. [Glossary](#glossary)
 
 ## Introduction to Type Extensions
 
@@ -56,6 +83,38 @@ The definition and use of Named Parameters in Genericy-SQL enable precise and se
 ### Default Value
 
 If no type extension is specified, the type `_S` is always used as the default value.
+
+### Implementation of Nullable in the REST API
+
+Handling `nullable` parameters in REST APIs created with Genericy-SQL varies depending on the type of HTTP request. This section explains how `nullable` parameters are implemented in different request scenarios (`SELECT` (GET), `INSERT` (POST), `UPDATE` (PUT), and `DELETE` (DELETE)).
+
+#### SELECT (GET)
+
+In a `SELECT` (GET) request, Named Parameters become path variables in the URL. If a parameter is marked as `nullable`, it can be omitted from the request. In this case, the parameter's value is treated as `null`.
+
+**Example:**
+
+- **Without Nullable Parameter:** `/clients/user_id/123/postal_code/70176`
+- **With Nullable Parameter:** `/clients/user_id/123` - Here, it's assumed that the Postal-Code parameter is `nullable` and can be omitted. The API interprets this as a search for a user with ID `123` and a `null` Postal Code, which may not be practical but illustrates the logic.
+
+#### INSERT (POST) and UPDATE (PUT)
+
+For `INSERT` (POST) and `UPDATE` (PUT) requests, where data is sent via the JSON-RequestBody, `nullable` parameters are considered by setting their value to JSON-`null`. This explicitly indicates that a value is not set.
+
+**Example:**
+
+```json
+{
+  "username": "newUser",
+  "age": null
+}
+```
+
+In this JSON-RequestBody for a POST or PUT request, the `age` parameter is set to `null` to indicate that the user's age is unknown or not applicable.
+
+#### DELETE (DELETE)
+
+In a `DELETE` (DELETE) request, the value `null` cannot be used since such requests must identify specific resources to be deleted. `Nullable` parameters are not applicable here since the semantics of DELETE are clearly defined, and the absence of an identifying parameter would make the request indeterminate.
 
 ### Clear Distinction Between Short and Long Forms with Examples
 
@@ -254,6 +313,33 @@ A process where SQL queries are automatically converted into RESTful API endpoin
 
 Genericy ermöglicht die nahtlose Transformation von SQL-Anfragen in REST-APIs. Ein leistungsstarkes Feature von Genericy ist die Unterstützung von Named Parametern in SQL-Statements, welche eine flexible und sichere Methode zur Datenmanipulation bieten. Durch die Einführung von Typangaben für diese Named Parameter können Entwickler nun die Datenintegrität weiter verbessern. Diese Dokumentation führt durch die Erweiterung der Named Parameter um optionale Typen, die die Robustheit und Sicherheit der SQL-zu-REST-API-Transformation erhöhen.
 
+## Inhaltsverzeichnis
+
+1. [Einführung in Typenerweiterungen](#einführung-in-typenerweiterungen)
+   - [Nutzung in Genericy-SQL](#nutzung-in-genericy-sql)
+     - [Beispiel](#beispiel)
+2. [Schema und Kombinatorik von Named Parametern in Genericy-SQL](#schema-und-kombinatorik-von-named-parametern-in-genericy-sql)
+   - [Grundprinzipien](#grundprinzipien)
+   - [Typdefinitionen](#typdefinitionen)
+     - [Primitive Typen](#primitive-typen)
+     - [Nullable Typen](#nullable-typen)
+     - [Array Typen](#array-typen)
+     - [Komplexe Typen](#komplexe-typen)
+   - [Regeln für die Kombination von Typen](#regeln-für-die-kombination-von-typen)
+   - [Default-Wert](#default-wert)
+3. [Implementierung von Nullable in der REST-API](#implementierung-von-nullable-in-der-rest-api)
+   - [SELECT (GET)](#select-get)
+   - [INSERT (POST) und UPDATE (PUT)](#insert-post-und-update-put)
+   - [DELETE (DELETE)](#delete-delete)
+4. [Klare Unterscheidung zwischen Kurz- und Langform anhand von Beispielen](#klare-unterscheidung-zwischen-kurz--und-langform-anhand-von-beispielen)
+5. [Mehr reale Anwendungsfälle](#mehr-reale-anwendungsfälle)
+   - [Anwendungsfall 1: Nutzerverwaltung](#anwendungsfall-1-nutzerverwaltung)
+   - [Anwendungsfall 2: Produktsuche mit Filtern](#anwendungsfall-2-produktsuche-mit-filtern)
+   - [Anwendungsfall 3: Buchungs- und Reservierungssysteme](#anwendungsfall-3-buchungs--und-reservierungssysteme)
+6. [Fehlerbehandlung und häufige Fehler](#fehlerbehandlung-und-häufige-fehler)
+7. [FAQ-Bereich](#faq-bereich)
+8. [Glossar](#glossar)
+
 ## Einführung in Typenerweiterungen
 
 Named Parameter in Genericy-SQL werden durch den Einsatz eines Doppelpunkts gekennzeichnet (z.B. `:named_parameter`). Um einen Typ für einen solchen Parameter festzulegen, wird dem Parameterbezeichner ein doppeltes Unterstrich (`__`) gefolgt von der Typenbezeichnung angehängt. Diese Erweiterung erlaubt eine präzise Definition der Datenstruktur, die über die API empfangen oder gesendet wird.
@@ -308,6 +394,38 @@ Die Definition und Verwendung von Named Parametern in Genericy-SQL ermöglicht e
 ### Default-Wert
 
 Wird keine Typerweiterung angegeben, so wird immer der Typ `_S` als Default-Wert verwendet.
+
+### Implementierung von Nullable in der REST-API
+
+Die Handhabung von `nullable` Parametern in REST-APIs, die mit Genericy-SQL erstellt wurden, variiert je nach Typ der HTTP-Anfrage. Dieser Abschnitt erläutert, wie `nullable` Parameter in verschiedenen Anfrageszenarien (`SELECT` (GET), `INSERT` (POST), `UPDATE` (PUT) und `DELETE` (DELETE)) implementiert werden.
+
+#### SELECT (GET)
+
+Bei einer `SELECT` (GET)-Anfrage werden Named Parameter zu Pfadvariablen in der URL. Wenn ein Parameter als `nullable` markiert ist, kann er in der Anfrage weggelassen werden. In diesem Fall wird der Wert des Parameters als `null` behandelt.
+
+**Beispiel:**
+
+- **Ohne Nullable Parameter:** `/clients/user_id/123/postal_code/70176`
+- **Mit Nullable Parameter:** `/clients/user_id/123` - Hier wird davon ausgegangen, dass der Postal-Code-Parameter `nullable` ist und weggelassen werden kann. Die API interpretiert dies als eine Suche nach einem Benutzer mit der ID `123` und einem `null` Postal Code, was in der Praxis vielleicht nicht sinnvoll ist, aber die Logik verdeutlicht.
+
+#### INSERT (POST) und UPDATE (PUT)
+
+Für `INSERT` (POST) und `UPDATE` (PUT)-Anfragen, bei denen Daten über den JSON-RequestBody gesendet werden, werden `nullable` Parameter berücksichtigt, indem ihr Wert auf JSON-`null` gesetzt wird. Dies gibt explizit an, dass ein Wert nicht festgelegt ist.
+
+**Beispiel:**
+
+```json
+{
+  "username": "neuerBenutzer",
+  "age": null
+}
+```
+
+In diesem JSON-RequestBody für eine POST- oder PUT-Anfrage wird der `age`-Parameter auf `null` gesetzt, um anzugeben, dass das Alter des Benutzers unbekannt oder nicht zutreffend ist.
+
+#### DELETE (DELETE)
+
+Bei einer `DELETE` (DELETE)-Anfrage kann der Wert `null` nicht verwendet werden, da solche Anfragen spezifische Ressourcen identifizieren müssen, die gelöscht werden sollen. `Nullable` Parameter sind hier nicht anwendbar, da die Semantik von DELETE klar definiert ist und das Fehlen eines identifizierenden Parameters die Anfrage unbestimmt machen würde.
 
 ### Klare Unterscheidung zwischen Kurz- und Langform anhand von Beispielen
 
