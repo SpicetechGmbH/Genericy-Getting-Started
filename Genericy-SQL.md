@@ -82,12 +82,17 @@ Handling `nullable` parameters in REST APIs created with Genericy-SQL varies dep
 
 #### SELECT (GET)
 
-In a `SELECT` (GET) request, Named Parameters become path variables in the URL. If a parameter is marked as `nullable`, it can be omitted from the request. In this case, the parameter's value is treated as `null`.
+For a `SELECT` (GET) request, it is required that each Named Parameter has a value since it is part of the path. To explicitly set a `nullable` parameter to `null`, a separate SQL statement must be created using `null` directly in the WHERE part of the query.
 
 **Example:**
 
-- **Without Nullable Parameter:** `/clients/user_id/123/postal_code/70176`
-- **With Nullable Parameter:** `/clients/user_id/123` - Here, it's assumed that the Postal-Code parameter is `nullable` and can be omitted. The API interprets this as a search for a user with ID `123` and a `null` Postal Code, which may not be practical but illustrates the logic.
+Suppose we have a table `users` with columns `user_id` and `postal_code`, and we want to query all user data where no `postal_code` is provided. The corresponding SQL statement could look like this:
+
+```sql
+SELECT * FROM users WHERE postal_code IS NULL;
+```
+
+This SQL statement selects all entries from the `users` table where the `postal_code` is `null`. In a REST API, this logic could be used to define a specific route or request that handles such cases, instead of omitting `nullable` parameters in the URL.
 
 #### INSERT (POST) and UPDATE (PUT)
 
@@ -385,12 +390,17 @@ Die Handhabung von `nullable` Parametern in REST-APIs, die mit Genericy-SQL erst
 
 #### SELECT (GET)
 
-Bei einer `SELECT` (GET)-Anfrage werden Named Parameter zu Pfadvariablen in der URL. Wenn ein Parameter als `nullable` markiert ist, kann er in der Anfrage weggelassen werden. In diesem Fall wird der Wert des Parameters als `null` behandelt.
+Bei einer `SELECT` (GET)-Anfrage ist es erforderlich, dass jeder Named Parameter einen Wert hat, da er Teil des Pfades ist. Um einen `nullable` Parameter explizit auf `null` zu setzen, muss ein separates SQL-Statement erstellt werden, in dem `null` direkt im WHERE-Teil der Abfrage verwendet wird.
 
 **Beispiel:**
 
-- **Ohne Nullable Parameter:** `/clients/user_id/123/postal_code/70176`
-- **Mit Nullable Parameter:** `/clients/user_id/123` - Hier wird davon ausgegangen, dass der Postal-Code-Parameter `nullable` ist und weggelassen werden kann. Die API interpretiert dies als eine Suche nach einem Benutzer mit der ID `123` und einem `null` Postal Code, was in der Praxis vielleicht nicht sinnvoll ist, aber die Logik verdeutlicht.
+Angenommen, wir haben eine Tabelle `users` mit den Spalten `user_id` und `postal_code`, und wir möchten alle Nutzerdaten abfragen, bei denen kein `postal_code` hinterlegt ist. Das entsprechende SQL-Statement könnte wie folgt aussehen:
+
+```sql
+SELECT * FROM users WHERE postal_code IS NULL;
+```
+
+Dieses SQL-Statement wählt alle Einträge aus der `users`-Tabelle, bei denen der `postal_code` `null` ist. In einer REST-API könnte diese Logik verwendet werden, um eine spezifische Route oder Anfrage zu definieren, die solche Fälle behandelt, anstatt `nullable` Parameter in der URL wegzulassen.
 
 #### INSERT (POST) und UPDATE (PUT)
 
