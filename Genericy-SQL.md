@@ -32,12 +32,26 @@ The definition and use of Named Parameters in Genericy-SQL enable precise and se
 - **Primitive Types:** Basic data types such as Strings, Numbers, Booleans, etc., are defined by simple abbreviations (S, N, I, B) or their full names (String, Number, Integer, Boolean).
 - **Nullable Types:** A type can be marked as optional (nullable) by placing an `n_` (short form) or `nullable_` (long form) before the type designation.
 - **Array Types:** To define arrays, `_A` (short form) or `_Array` (long form) is appended to the type designation.
+- **Complex Types:**
+  - **Base64 (B64):**
+    - **Short Form:** `B64` is used to represent Base64-encoded data.
+    - **Long Form:** `Base64` is used to clarify that the parameter should contain Base64-encoded data. Ideal for transferring files or images as part of a request.
+  - **JsonObject (JO):**
+    - **Short Form:** `JO` represents a JSON object.
+    - **Long Form:** `JsonObject` signals that the parameter transmits complex data structures in the form of a JSON object. This allows for the transmission of structured data with key-value pairs.
+  - **JsonArray (JA):**
+    - **Short Form:** `JA` stands for a JSON array.
+    - **Long Form:** `JsonArray` is used to indicate that the parameter transmits a list of objects or values in a JSON array. Suitable for transferring lists or collections of data in a structured form.
 
 ### Rules for Combining Types
 
-1. **Primitive Types** form the basis of each type definition. They can be used directly or as the foundation for further specifications.
-2. **Nullable Types** are indicated by prefixing `n_` or `nullable_` before the type, signifying that the parameter value can also be null.
-3. **Array Types** are specified by appending `_A` or `_Array` to the type designation. This rule only applies to primitive types.
+1. **Primitive Types** form the basis of each type definition. They can be used directly or serve as the foundation for further specifications.
+2. **Nullable Types** are indicated by prefixing `n_` or `nullable_` before the type. This shows that the parameter value can also be null.
+3. **Array Types** are specified by appending `_A` or `_Array` to the type designation. This rule applies only to primitive types.
+4. **Complex Types** such as `Base64`, `JsonObject`, and `JsonArray` can also be used to define specific data structures:
+    - **Base64 (B64):** Cannot be combined with other types as it specifically stands for the encoding of binary data.
+    - **JsonObject (JO):** Represents a single JSON object and is not combined with the array suffix, as it already denotes a complex, structured form of data.
+    - **JsonArray (JA):** Represents a list of JSON objects or primitive types and, similar to `JsonObject`, is treated as an independent type that is not further combined with the array suffix.
 
 ### Default Value
 
@@ -270,12 +284,26 @@ Die Definition und Verwendung von Named Parametern in Genericy-SQL ermöglicht e
 - **Primitive Typen:** Basisdatentypen wie Strings, Zahlen, Booleans etc. werden durch einfache Kürzel (S, N, I, B) oder ihre vollständigen Namen (String, Number, Integer, Boolean) definiert.
 - **Nullable Typen:** Ein Typ kann als optional (nullable) gekennzeichnet werden, indem ein `n_` (Kurzform) oder `nullable_` (Langform) vor die Typbezeichnung gesetzt wird.
 - **Array Typen:** Um Arrays zu definieren, wird `_A` (Kurzform) oder `_Array` (Langform) an die Typbezeichnung angehängt.
+- **Komplexe Typen:**
+  - **Base64 (B64):**
+    - **Kurzform:** `B64` dient zur Darstellung von Base64-kodierten Daten.
+    - **Langform:** `Base64` wird verwendet, um klarzustellen, dass der Parameter Base64-kodierte Daten enthalten soll. Ideal für die Übertragung von Dateien oder Bildern als Teil einer Anfrage.
+  - **JsonObject (JO):**
+    - **Kurzform:** `JO` repräsentiert ein JSON-Objekt.
+    - **Langform:** `JsonObject` signalisiert, dass der Parameter komplexe Datenstrukturen in Form eines JSON-Objekts übermittelt. Dies ermöglicht die Übertragung strukturierter Daten mit Schlüssel-Wert-Paaren.
+  - **JsonArray (JA):**
+    - **Kurzform:** `JA` steht für ein JSON-Array.
+    - **Langform:** `JsonArray` wird genutzt, um anzugeben, dass der Parameter eine Liste von Objekten oder Werten in einem JSON-Array übermittelt. Geeignet für die Übertragung von Listen oder Sammlungen von Daten in strukturierter Form.
 
 ### Regeln für die Kombination von Typen
 
 1. **Primitive Typen** bilden die Grundlage jeder Typdefinition. Sie können direkt verwendet oder als Basis für weitere Spezifikationen dienen.
 2. **Nullable Typen** werden durch Voranstellen von `n_` oder `nullable_` vor den Typ definiert. Dies zeigt an, dass der Parameterwert auch null sein kann.
 3. **Array-Typen** werden durch Anhängen von `_A` oder `_Array` an die Typbezeichnung angegeben. Diese Regel gilt nur für primitive Typen.
+4. **Komplexe Typen** wie `Base64`, `JsonObject`, und `JsonArray` können ebenfalls verwendet werden, um spezifische Datenstrukturen zu definieren:
+    - **Base64 (B64):** Kann nicht mit anderen Typen kombiniert werden, da es spezifisch für die Kodierung von Binärdaten steht.
+    - **JsonObject (JO):** Repräsentiert ein einzelnes JSON-Objekt und wird nicht mit dem Array-Suffix kombiniert, da es bereits eine komplexe, strukturierte Datenform darstellt.
+    - **JsonArray (JA):** Repräsentiert eine Liste von JSON-Objekten oder primitiven Typen und wird, ähnlich wie `JsonObject`, als eigenständiger Typ behandelt, der nicht weiter mit dem Array-Suffix kombiniert wird.
 
 ### Default-Wert
 
