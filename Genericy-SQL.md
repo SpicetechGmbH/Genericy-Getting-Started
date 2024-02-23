@@ -6,7 +6,6 @@ Genericy enables seamless transformation of SQL queries into REST APIs. A powerf
 
 1. [Introduction to Type Extensions](#introduction-to-type-extensions)
    - [Utilization in Genericy-SQL](#utilization-in-genericy-sql)
-     - [Example](#example)
 2. [Schema and Combinatorics of Named Parameters in Genericy-SQL](#schema-and-combinatorics-of-named-parameters-in-genericy-sql)
    - [Fundamental Principles](#fundamental-principles)
    - [Type Definitions](#type-definitions)
@@ -317,7 +316,6 @@ Genericy ermöglicht die nahtlose Transformation von SQL-Anfragen in REST-APIs. 
 
 1. [Einführung in Typenerweiterungen](#einführung-in-typenerweiterungen)
    - [Nutzung in Genericy-SQL](#nutzung-in-genericy-sql)
-     - [Beispiel](#beispiel)
 2. [Schema und Kombinatorik von Named Parametern in Genericy-SQL](#schema-und-kombinatorik-von-named-parametern-in-genericy-sql)
    - [Grundprinzipien](#grundprinzipien)
    - [Typdefinitionen](#typdefinitionen)
