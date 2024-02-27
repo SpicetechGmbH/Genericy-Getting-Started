@@ -74,7 +74,21 @@ The definition and use of Named Parameters in Genericy-SQL enable precise and se
 
 ### Default Value
 
-If no type extension is specified, the type `_S` is always used as the default value.
+If no specific type extension is specified with `__` in the definition, an automatic type conversion is performed to ensure compatibility between the type provided in the request and the type expected in the database. This conversion is facilitated by the JDBC driver or through explicit type casting in the SQL statement.
+
+- **For SELECT (GET) and DELETE (DELETE) requests:** It is standard practice to assume that path parameters are passed as strings. These strings are transmitted to the database via the JDBC driver, which is responsible for the necessary type conversion if needed. Alternatively, type casting can also be performed directly in the SQL statement to ensure precise control over the data type.
+
+  **Examples for SELECT and DELETE with type casting in SQL for a PostgreSQL database:**
+  ```sql
+  -- For a SELECT query
+  SELECT * FROM table_name WHERE column_name = CAST(:column_id AS INTEGER);
+
+  -- For a DELETE query
+  DELETE FROM table_name WHERE column_name = CAST(:column_id AS INTEGER);
+  ```
+  In these examples, the named parameter `:column_id`, which is passed as a string, is explicitly converted to the expected integer type to ensure correct type matching with the `column_name` column in the database.
+
+- **For INSERT (POST) and UPDATE (PATCH) requests:** The type provided by the JSON format of the request is used directly. This allows for the use of all types supported by JSON. The JDBC driver of the database must be able to process these types accordingly. Type casting in the SQL statement can also be applied to ensure type compatibility.
 
 ### Implementation of Nullable in the REST API
 
@@ -382,7 +396,21 @@ Die Definition und Verwendung von Named Parametern in Genericy-SQL ermöglicht e
 
 ### Default-Wert
 
-Wird keine Typerweiterung angegeben, so wird immer der Typ `_S` als Default-Wert verwendet.
+Falls in der Definition keine spezifische Typ-Erweiterung mit `__` angegeben wird, erfolgt eine automatische Typkonvertierung, um die Kompatibilität zwischen dem in der Anfrage bereitgestellten Typ und dem in der Datenbank erwarteten Typ sicherzustellen. Diese Konvertierung wird durch den JDBC-Treiber oder durch explizites Typ-Casting im SQL-Statement ermöglicht.
+
+- **Bei SELECT (GET) und DELETE (DELETE) Anfragen:** Es wird standardmäßig angenommen, dass Pfadparameter als Strings übergeben werden. Diese Strings werden durch den JDBC-Treiber an die Datenbank übermittelt, der für die erforderliche Typkonvertierung zuständig ist, sofern dies notwendig ist. Alternativ kann das Typ-Casting auch direkt im SQL-Statement vorgenommen werden, um eine präzise Kontrolle über den Typ der Daten zu gewährleisten. 
+
+  **Beispiele für SELECT und DELETE mit Typ-Casting in SQL für eine PostgeSQL-Datenbank:**
+  ```sql
+  -- Für eine SELECT-Anfrage
+  SELECT * FROM table_name WHERE column_name = CAST(:column_id AS INTEGER);
+
+  -- Für eine DELETE-Anfrage
+  DELETE FROM table_name WHERE column_name = CAST(:column_id AS INTEGER);
+  ```
+  In diesen Beispielen wird der Named Parameter `:column_id`, der als String übergeben wird, explizit in den erwarteten Integer-Typ umgewandelt, um die korrekte Typübereinstimmung mit der Spalte `column_name` in der Datenbank zu gewährleisten.
+
+- **Bei INSERT (POST) und UPDATE (PATCH) Anfragen:** Der Typ, der durch das JSON-Format der Anfrage bereitgestellt wird, wird direkt verwendet. Dies ermöglicht die Nutzung aller durch JSON unterstützten Typen. Der JDBC-Treiber der Datenbank muss in der Lage sein, diese Typen entsprechend zu verarbeiten. Typ-Casting im SQL-Statement kann ebenfalls angewendet werden, um die Typkompatibilität sicherzustellen.
 
 ### Implementierung von Nullable in der REST-API
 
