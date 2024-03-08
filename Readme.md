@@ -13,45 +13,35 @@ Welcome to Genericy, the new era of database integration. Revolutionize your dat
 - A license file, which must be obtained from the Genericy website: [https://www.genericy.de](https://www.genericy.de)
 
 ### Steps to Get Started with a SQLite Sample Database
-1. Clone this repository and switch to the directory:
-```
-git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
-cd Genericy-Getting-Started
-```
-2. Download a sample database:
-```
-curl -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite
-```
 
-3. The `license.lic` file will be delivered to you via email. Place it in the same folder as the `genericy.jar` file and pay close attention to the exact spelling of the filename `license.lic`.
+1. **Clone the Repository and Navigate:**
+   ```
+   git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+   cd Genericy-Getting-Started
+   ```
 
-4. Optionally, you can adjust the port, to which the service is bound on the host machine, in the `docker-compose.yml` file. By default, the port is set to 8888.
+2. **Optionally Adjust Port Settings:**
+   If needed, modify the port to which the service binds on the host machine in the `docker-compose.yml` file. By default, it's set to 8888.
 
-5. Execute `docker-compose up`.
+3. **Start Genericy and Download Sample Database:**
+   Run `docker-compose up` to initiate Genericy. During this step, a sample SQLite database named `Chinook_Sqlite.sqlite` will be downloaded if it doesn't already exist.
 
-6. Copy the admin key that is displayed in the Docker console.
-   <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 57 57" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/48535d34-3be6-4623-b170-0a565a635294">
+4. **Copy the Admin Key:**
+   Copy the admin key displayed in the Docker console.
+   ![Admin Key Screenshot](https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/48535d34-3be6-4623-b170-0a565a635294)
 
-8. Open [http://localhost:8888/genericy/admin.html](http://localhost:8888/genericy/admin.html) in your browser, insert the admin key, and click LOGIN.
-   <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 15" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/05a35d85-4af7-4972-92b4-573e27b31740">
+5. **Access the Admin Interface:**
+   Open [http://localhost:8888/genericy/admin.html](http://localhost:8888/genericy/admin.html) in your browser, paste the admin key, and click LOGIN.
+   ![Admin Interface Screenshot](https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/05a35d85-4af7-4972-92b4-573e27b31740)
 
-10. Optionally, you can add sample endpoints from the SETTINGS menu.
+6. **Optional: Add Sample Endpoints:**
+   You can add sample endpoints from the SETTINGS menu.
 
-    - Click on SETTINGS
-    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 30" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/d3f9128f-7cbd-4b31-a9ed-b6d7c7a944b0">
+7. **Activate License and Explore:**
+   After accepting the license agreement, new users can request a 30-day free demo license. Now you can work with the sample data and create your own Genericy statements. For more information about Genericy-SQL, refer to the [Genericy-SQL Documentation](Genericy-SQL.md) in the same repository.
 
-    - Click on LOAD SAMPLE STATEMENTS
-    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 43" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/ea20648b-7240-4ff2-9860-ce04a2238475">
-
-    - Click on CONFIRM
-    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 41 55" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/fd7b19d0-f32f-436d-8fb6-9512fe6fd2b2">
-
-    - Click on SQL-EDITOR to get back
-    <img width="1912" alt="Bildschirmfoto 2024-02-20 um 10 42 14" src="https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/2e33657f-428c-4bcc-bb91-101ecab5ac84">
-
-Now you can work the sample data and create your own Genericy statements.
-
-In the next step, the sample database can be replaced with an existing target database. The configuration must be adjusted as described in the following section.
+8. **Replace Sample Database (Optional):**
+   In the next step, you can replace the sample database with an existing target database. Follow the configuration adjustments described in the subsequent section.
 
 ### Configuration
 The `application.properties` file contains configuration settings for connecting your database to Genericy. Here's what each setting means:
