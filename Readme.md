@@ -14,32 +14,41 @@ Welcome to Genericy, the new era of database integration. Revolutionize your dat
 ### Steps to Get Started with a SQLite Sample Database
 
 1. **Clone the Repository and Navigate:**
-   ```
+   ```bash
    git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+   ```
+   
+   ```bash
    cd Genericy-Getting-Started
    ```
 
 2. **Optionally Adjust Port Settings:**
    If needed, modify the port to which the service binds on the host machine in the `docker-compose.yml` file. By default, it's set to 8888.
 
-3. **Start Genericy and Download Sample Database:**
-   Run `docker-compose up` to initiate Genericy. During this step, a sample SQLite database named `Chinook_Sqlite.sqlite` will be downloaded if it doesn't already exist.
+   If you change the port or if your URL is not http://localhost:8888 you have to adapt `genericy.allowed-origins` in the file `application.properties` corresponding.
 
-4. **Copy the Admin Key:**
+4. **Start Genericy and Download Sample Database:**
+   Run
+   ```bash
+   docker-compose up
+   ```
+   to initiate Genericy. During this step, a sample SQLite database named `Chinook_Sqlite.sqlite` will be downloaded if it doesn't already exist.
+
+6. **Copy the Admin Key:**
    Copy the admin key displayed in the Docker console.
    ![Admin Key Screenshot](https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/48535d34-3be6-4623-b170-0a565a635294)
 
-5. **Access the Admin Interface:**
+7. **Access the Admin Interface:**
    Open [http://localhost:8888/genericy/admin.html](http://localhost:8888/genericy/admin.html) in your browser, paste the admin key, and click LOGIN.
    ![Admin Interface Screenshot](https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/05a35d85-4af7-4972-92b4-573e27b31740)
 
-6. **Optional: Add Sample Endpoints:**
+8. **Optional: Add Sample Endpoints:**
    You can add sample endpoints from the SETTINGS menu.
 
-7. **Activate License and Explore:**
+9. **Activate License and Explore:**
    After accepting the license agreement, new users can request a 30-day free demo license. Now you can work with the sample data and create your own Genericy statements. For more information about Genericy-SQL, refer to the [Genericy-SQL Documentation](Genericy-SQL.md) in the same repository.
 
-8. **Replace Sample Database (Optional):**
+10. **Replace Sample Database (Optional):**
    In the next step, you can replace the sample database with an existing target database. Follow the configuration adjustments described in the subsequent section.
 
 ### Configuration
@@ -90,32 +99,41 @@ Willkommen bei Genericy, dem neuen Zeitalter der Datenbankintegration. Revolutio
 ### Schritte zum Starten mit einer SQLite-Beispieldatenbank
 
 1. **Repository klonen und Verzeichnis wechseln:**
-   ```
+   ```bash
    git clone https://github.com/SpicetechGmbH/Genericy-Getting-Started.git
+   ```
+   
+   ```bash
    cd Genericy-Getting-Started
    ```
 
 2. **Optional: Porteinstellungen anpassen:**
-   Bei Bedarf können Sie den Port, an den der Dienst auf dem Hostrechner gebunden ist, in der Datei `docker-compose.yml` ändern. Standardmäßig ist er auf 8888 festgelegt.
+   Falls erforderlich, können Sie den Port, an den der Dienst auf dem Hostrechner gebunden ist, in der `docker-compose.yml`-Datei ändern. Standardmäßig ist er auf 8888 festgelegt.
+
+   Wenn Sie den Port ändern oder wenn Ihre URL nicht http://localhost:8888 lautet, müssen Sie `genericy.allowed-origins` in der Datei `application.properties` entsprechend anpassen.
 
 3. **Genericy starten und Beispieldatenbank herunterladen:**
-   Führen Sie `docker-compose up` aus, um Genericy zu starten. Während dieses Schritts wird eine Beispieldatenbank im SQLite-Format namens `Chinook_Sqlite.sqlite` heruntergeladen, falls sie noch nicht vorhanden ist.
+   Führen Sie
+   ```bash
+   docker-compose up
+   ```
+   aus, um Genericy zu starten. Während dieses Schritts wird eine Beispieldatenbank im SQLite-Format namens `Chinook_Sqlite.sqlite` heruntergeladen, falls sie noch nicht vorhanden ist.
 
-4. **Admin-Key kopieren:**
+5. **Admin-Key kopieren:**
    Kopieren Sie den in der Docker-Konsole angezeigten Admin-Key.
    ![Screenshot des Admin-Schlüssels](https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/48535d34-3be6-4623-b170-0a565a635294)
 
-5. **Zugriff auf die Admin-Oberfläche:**
+6. **Zugriff auf die Admin-Oberfläche:**
    Öffnen Sie [http://localhost:8888/genericy/admin.html](http://localhost:8888/genericy/admin.html) in Ihrem Browser, fügen Sie den Admin-Key ein und klicken Sie auf LOGIN.
    ![Screenshot der Admin-Oberfläche](https://github.com/SpicetechGmbH/Genericy-Getting-Started/assets/37299230/05a35d85-4af7-4972-92b4-573e27b31740)
 
-6. **Optional: Beispiel-Endpunkte hinzufügen:**
+7. **Optional: Beispiel-Endpunkte hinzufügen:**
    Sie können im SETTINGS-Menü Beispiel-Endpunkte hinzufügen.
 
-7. **Lizenz aktivieren und erkunden:**
+8. **Lizenz aktivieren und erkunden:**
    Nachdem Sie die Lizenzvereinbarung akzeptiert haben, können neue Benutzer eine kostenlose 30-tägige Demo-Lizenz anfordern. Jetzt können Sie mit den Beispieldaten arbeiten und Ihre eigenen Genericy-Anweisungen erstellen. Weitere Informationen zu Genericy-SQL finden Sie in der [Genericy-SQL-Dokumentation](Genericy-SQL.md) im selben Repository.
 
-8. **Beispieldatenbank ersetzen (optional):**
+9. **Beispieldatenbank ersetzen (optional):**
    Im nächsten Schritt können Sie die Beispieldatenbank durch eine vorhandene Ziel-Datenbank ersetzen. Folgen Sie hierzu den Konfigurationsanpassungen, welche im folgenden Abschnitt beschrieben sind.
 
 ### Konfiguration
