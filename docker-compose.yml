@@ -11,7 +11,8 @@ services:
     volumes:
       - ./:/genericy
     working_dir: /genericy
-    command: java -jar genericy.jar
+    command: >
+      bash -c 'if [ ! -e Chinook_Sqlite.sqlite ]; then curl -L -o Chinook_Sqlite.sqlite https://github.com/lerocha/chinook-database/releases/download/v1.4.5/Chinook_Sqlite.sqlite; fi && java -jar genericy.jar'
 
     # for Linux Systems uncomment the following two lines
     # extra_hosts:
