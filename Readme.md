@@ -4,7 +4,7 @@
 
 # Getting Started
 
-## English (German version below)
+## English ([German version below](#Deutsch))
 
 Welcome to Genericy, the new era of database integration. Revolutionize your database operations with SQL to REST API transformation. Genericy enables rapid REST API development and deployment by automatically converting SQL statements into endpoints and generating OpenAPI documentation.
 
