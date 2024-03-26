@@ -25,7 +25,7 @@ Welcome to Genericy, the new era of database integration. Revolutionize your dat
 2. **Optionally Adjust Port Settings:**
    If needed, modify the port to which the service binds on the host machine in the `docker-compose.yml` file. By default, it's set to 8888.
 
-   If you change the port or if your URL is not `http://localhost:8888`, you need to add an entry `ALLOWED_ORIGINS` in a file named `.env` with the corresponding value. This file must be placed in the same folder as the `genericy.jar` file.
+   If you change the port or if your URL is not `http://localhost:8888`, you need to add an entry `ALLOWED_ORIGINS` in a file named `.env` with the corresponding value. This file must be placed in the same folder as the `docker-compose.yml` file.
 
 4. **Start Genericy and Download Sample Database:**
    Run
@@ -65,14 +65,14 @@ The `application.properties` file contains configuration settings for connecting
   - MariaDB: `org.mariadb.jdbc.Driver`
   - PostgreSQL: `org.postgresql.Driver`
   - SQLite: `org.sqlite.JDBC`
-
+ 
 ### Additional Configuration for OpenAPI Documentation
 
-To ensure the OpenAPI documentation functions correctly and is accessible from outside the container, you need to specify the external URL through which the container will be accessed. Add the following line to your `application.properties` file:
+To ensure the OpenAPI documentation functions correctly and is accessible from outside the container, you need to specify the external URL through which the container will be accessed. Add the following line to your `.env` file:
 
-- `genericy.allowed-origins=http://localhost:8888`
+- `GENERICY_ALLOWED_ORIGINS=http://localhost:8888`
 
-This setting should match the URL you use to access the Genericy container from your browser. Adjust the URL accordingly if your setup differs.
+This setting should match the URL you use to access the Genericy container from your browser. Adjust the URL accordingly if your setup differs. Make sure to place the `.env` file in the same directory as the `docker-compose.yml` file to be properly recognized.
 
 ### Important Note for SQLite Users
 
@@ -110,7 +110,7 @@ Willkommen bei Genericy, dem neuen Zeitalter der Datenbankintegration. Revolutio
 2. **Optional: Porteinstellungen anpassen:**
    Falls erforderlich, können Sie den Port, an den der Dienst auf dem Hostrechner gebunden ist, in der `docker-compose.yml`-Datei ändern. Standardmäßig ist er auf 8888 festgelegt.
 
-   Wenn Sie den Port ändern oder Ihre URL nicht `http://localhost:8888` lautet, müssen Sie in einer Datei namens `.env` einen Eintrag `ALLOWED_ORIGINS` mit dem entsprechenden Wert hinzufügen. Diese Datei muss sich im selben Ordner wie die `genericy.jar` Datei befinden.
+   Wenn Sie den Port ändern oder Ihre URL nicht `http://localhost:8888` lautet, müssen Sie in einer Datei namens `.env` einen Eintrag `ALLOWED_ORIGINS` mit dem entsprechenden Wert hinzufügen. Diese Datei muss sich im selben Ordner wie die `docker-compose.yml` Datei befinden.
 
 3. **Genericy starten und Beispieldatenbank herunterladen:**
    Führen Sie
@@ -151,13 +151,13 @@ Die Datei `application.properties` enthält Konfigurationseinstellungen für die
   - PostgreSQL: `org.postgresql.Driver`
   - SQLite: `org.sqlite.JDBC`
 
-### Zusätzliche Konfiguration für OpenAPI-Dokumentation
+### Zusätzliche Konfiguration für die OpenAPI-Dokumentation
 
-Um sicherzustellen, dass die OpenAPI-Dokumentation korrekt funktioniert und von außerhalb des Containers zugänglich ist, müssen Sie die externe URL angeben, über die auf den Container zugegriffen wird. Fügen Sie folgende Zeile zu Ihrer `application.properties`-Datei hinzu:
+Um sicherzustellen, dass die OpenAPI-Dokumentation korrekt funktioniert und von außerhalb des Containers zugänglich ist, müssen Sie die externe URL angeben, über die auf den Container zugegriffen wird. Fügen Sie die folgende Zeile zu Ihrer `.env`-Datei hinzu:
 
-- `genericy.allowed-origins=http://localhost:8888`
+- `GENERICY_ALLOWED_ORIGINS=http://localhost:8888`
 
-Diese Einstellung sollte der URL entsprechen, die Sie verwenden, um auf den Genericy-Container von Ihrem Browser aus zuzugreifen. Passen Sie die URL entsprechend an, falls Ihre Einrichtung abweicht.
+Diese Einstellung sollte der URL entsprechen, die Sie verwenden, um auf den Genericy-Container von Ihrem Browser aus zuzugreifen. Passen Sie die URL entsprechend an, wenn Ihre Konfiguration abweicht. Stellen Sie sicher, dass die `.env`-Datei im selben Verzeichnis wie die `docker-compose.yml`-Datei abgelegt wird, um korrekt erkannt zu werden.
 
 ### Wichtiger Hinweis für SQLite-Benutzer
 
