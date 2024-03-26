@@ -25,7 +25,7 @@ Welcome to Genericy, the new era of database integration. Revolutionize your dat
 2. **Optionally Adjust Port Settings:**
    If needed, modify the port to which the service binds on the host machine in the `docker-compose.yml` file. By default, it's set to 8888.
 
-   If you change the port or if your URL is not http://localhost:8888 you have to adapt `genericy.allowed-origins` in the file `application.properties` corresponding.
+   If you change the port or if your URL is not `http://localhost:8888``, you need to add an entry `ALLOWED_ORIGINS` in a file named `.env` with the corresponding value. This file must be placed in the same folder as the `genericy.jar file.
 
 4. **Start Genericy and Download Sample Database:**
    Run
@@ -110,7 +110,7 @@ Willkommen bei Genericy, dem neuen Zeitalter der Datenbankintegration. Revolutio
 2. **Optional: Porteinstellungen anpassen:**
    Falls erforderlich, können Sie den Port, an den der Dienst auf dem Hostrechner gebunden ist, in der `docker-compose.yml`-Datei ändern. Standardmäßig ist er auf 8888 festgelegt.
 
-   Wenn Sie den Port ändern oder wenn Ihre URL nicht http://localhost:8888 lautet, müssen Sie `genericy.allowed-origins` in der Datei `application.properties` entsprechend anpassen.
+   Wenn Sie den Port ändern oder Ihre URL nicht `http://localhost:8888` lautet, müssen Sie in einer Datei namens `.env` einen Eintrag `ALLOWED_ORIGINS` mit dem entsprechenden Wert hinzufügen. Diese Datei muss sich im selben Ordner wie die `genericy.jar` Datei befinden.
 
 3. **Genericy starten und Beispieldatenbank herunterladen:**
    Führen Sie
